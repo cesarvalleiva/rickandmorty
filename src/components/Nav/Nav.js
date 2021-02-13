@@ -6,6 +6,7 @@ const Nav = () => {
     return ( 
         <Container className="mb-4">
             <Link to="/">Home</Link>
+            <Link to="/episodes">Episodes</Link>
         </Container>
      );
 }
