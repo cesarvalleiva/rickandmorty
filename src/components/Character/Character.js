@@ -1,23 +1,31 @@
 import { Link } from 'react-router-dom'
-import { Col, Card, Button } from 'react-bootstrap' 
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import './Character.css'
 
-const Character = ({name, status, species, gender, image}) => {
+const Character = (props) => {
+    const {name, status, image, species, gender} = props.location.character;
+
     return ( 
-        <Col className="mb-4">
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={image} />
-                <Card.Body>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Text>
-                    {status} - {species} - {gender}
-                    </Card.Text>
-                    <Link to='/id'>
-                        <Button type="button" variant="success" block>Ver más</Button>
+        <Container className="mt-4">
+            <Row>
+                <h1>{name}</h1>
+                <Col md={4}>
+                    <img src={image} />
+                </Col>
+                <Col md={8}>
+                    <p>Estado: {status === 'Alive' ? 'Vivo' : status === 'Dead' ? 'Muerto' : 'Unknown'}</p>
+                    <p>Género: {gender === 'Male' ? 'Hombre' : 'Mujer'}</p>
+                    <p>Especie: {species === 'Human' ? 'Humano' : 'Alien'}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                <Link to='/'>
+                        <Button type="button" variant="primary" className="mt-4" block>Volver</Button>
                     </Link>
-                </Card.Body>
-            </Card>
-        </Col>
+                </Col>
+            </Row>
+        </Container>
      );
 }
  

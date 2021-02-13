@@ -1,0 +1,5 @@
+.card-character {
+    -webkit-box-shadow: 0 8px 6px -6px rgb(77, 77, 77);
+    -moz-box-shadow: 0 8px 6px -6px rgb(77, 77, 77);
+    box-shadow: 0 8px 6px -6px rgb(77, 77, 77);
+}
