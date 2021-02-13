@@ -1,8 +1,11 @@
+import Characters from './components/Characters'
+import { Container } from 'react-bootstrap'
+
 function App() {
   return (
-    <div className="App">
-      <h1>Probando APP</h1>
-    </div>
+    <Container>
+      <Characters />
+    </Container>
   );
 }
 
