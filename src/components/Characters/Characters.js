@@ -1,6 +1,7 @@
 import { useGet } from '../../customHooks/useHTTP'
-import Character from '../Character'
 import { Container, Row } from 'react-bootstrap'
+import Character from '../Character'
+import Loading  from '../Loading'
 import './Characters.css'
 
 const Characters = () => {
@@ -9,8 +10,9 @@ const Characters = () => {
     return ( 
         <Container>
             <Row>
+                <h1>Personajes</h1>
                 {fetching ? 
-                    <h1>Cargando</h1>
+                    <Loading />
                 :
                     characters.map((character) => (
                         <Character key={character.id} {...character} />

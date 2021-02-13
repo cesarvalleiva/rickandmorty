@@ -4,9 +4,12 @@ import './Nav.css'
 
 const Nav = () => {
     return ( 
-        <Container className="mb-4">
-            <Link to="/">Home</Link>
-            <Link to="/episodes">Episodes</Link>
+        <Container fluid className="nav">
+            <Container className="mb-4 nav">
+                <img src="./images/rickandmorty.png" alt="Logo" className="logo" />
+                <Link to="/" className="link">Home</Link>
+                <Link to="/episodes" className="link">Episodes</Link>
+            </Container>
         </Container>
      );
 }

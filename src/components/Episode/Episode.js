@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom'
-import { Col, Card, Button } from 'react-bootstrap' 
-import './Character.css'
+import moment from 'moment'
+import { Col, Card, Button } from 'react-bootstrap'
+import './Episode.css'
 
-const Character = ({name, status, species, gender, image}) => {
+const Episode = ({ name, air_date, episode}) => {
     return ( 
-        <Col className="mb-4">
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={image} />
+        <>
+        <Col>
+            <Card style={{ width: '18rem' }} className="mb-3">
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
-                    {status} - {species} - {gender}
+                    {moment(air_date).format("D/MM/YY")} - Episodio: {episode}
                     </Card.Text>
                     <Link to='/id'>
                         <Button type="button" variant="success" block>Ver más</Button>
@@ -18,7 +19,8 @@ const Character = ({name, status, species, gender, image}) => {
                 </Card.Body>
             </Card>
         </Col>
+        </>
      );
 }
  
-export default Character;
+export default Episode;

@@ -1,10 +1,23 @@
-import { Container } from 'react-bootstrap'
+import { useGet } from '../../customHooks/useHTTP'
+import { Container, Row } from 'react-bootstrap'
+import Loading from '../Loading';
+import Episode from '../Episode'
 import './Episodes.css'
 
 const Episodes = () => {
+    const [episodes, fetching, errors] = useGet('episode')
     return ( 
         <Container>
-            <h1>Episodes</h1>
+            <Row>
+                <h1>Episodios</h1>
+                {fetching ?
+                    <Loading />
+                : 
+                    episodes.map((episode) => (
+                        <Episode key={episode.id} {...episode} />
+                    ))
+                }
+            </Row>
         </Container>
     );
 }
