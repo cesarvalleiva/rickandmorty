@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Col, Card, Button } from 'react-bootstrap' 
 import './Character.css'
 
@@ -11,7 +12,9 @@ const Character = ({name, status, species, gender, image}) => {
                     <Card.Text>
                     {status} - {species} - {gender}
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Link to='/id'>
+                        <Button type="button" variant="success" block>Ver más</Button>
+                    </Link>
                 </Card.Body>
             </Card>
         </Col>

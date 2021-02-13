@@ -1,11 +1,14 @@
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Characters from './components/Characters'
-import { Container } from 'react-bootstrap'
+import Nav from './components/Nav'
 
 function App() {
   return (
-    <Container>
-      <Characters />
-    </Container>
+    <Router>
+        <Nav />
+        <Route path="/" exact component={Characters} />
+        <Route path="/otro" component={Characters} />
+    </Router>
   );
 }
 
